@@ -1,0 +1,8 @@
+#!/bin/sh
+# A script that makes git cloning easier.
+# Dependencies:
+# git
+
+REPO="https://github.com/$1"
+
+git clone $REPO

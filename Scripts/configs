@@ -1,0 +1,32 @@
+#!/bin/sh
+# A utility script to edit specific configs
+# Rewrite script to fit your configs
+# Dependencies:
+# dmenu
+
+
+CONFIGS="awesome\nbash\nneovim\nalacritty\npolybar"
+EDIT=$EDITOR
+
+USERINPUT=$(echo -e $CONFIGS | dmenu -p "Which program would you like to edit the config of?")
+
+case $USERINPUT in
+    "awesome")
+        $EDIT ~/.config/awesome/rc.lua
+        ;;
+    "neovim")
+        $EDIT ~/.config/nvim/init.vim
+        ;;
+    "bash")
+        $EDIT ~/.config/bash/.bashrc
+        ;;
+    "alacritty") 
+        $EDIT ~/.config/alacritty/alacritty.yml
+        ;;
+    "polybar")
+        $EDIT ~/.config/polybar/config.ini
+        ;;
+    "*")
+        echo "Unknown option"
+        ;;
+esac

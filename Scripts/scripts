@@ -1,0 +1,24 @@
+#!/bin/sh
+# A utility script to quickly edit other scripts
+# Dependencies:
+# dmenu
+
+SCRIPTS="configs\ngc\nscripts"
+EDIT=$EDITOR
+
+USERINPUT=$(echo -e $SCRIPTS | dmenu -p "Choose a script to edit")
+
+case $USERINPUT in
+    "gc")
+        $EDIT ~/Scripts/gc
+        ;;
+    "configs")
+        $EDIT ~/Scripts/configs
+        ;;
+    "scripts")
+        $EDIT ~/Scripts/scripts
+        ;;
+    *)
+        echo "Script not found"
+        ;;
+esac
