@@ -1,0 +1,7 @@
+#!/bin/sh
+# A utility script to easily make a script
+
+touch ./"$1"
+echo -e "#!/bin/sh\n\n\n" >> ./"$1"
+chmod +x ./"$1"
+$EDITOR ./"$1"
