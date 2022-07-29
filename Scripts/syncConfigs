@@ -6,13 +6,13 @@ CONFIGS="alacritty\nawesome\nbash\nnvim\npolybar\nzsh\nall"
 USERINPUT=$(echo -e "$CONFIGS" | dmenu -p "Which config would you like to sync?")
 
 case $USERINPUT in
-    "alacritty") cp -r ~/.config/alacritty ~/Repos/dotfiles/.config && eval "$GIT" ;;
-    "awesome") cp -r ~/.config/awesome ~/Repos/dotfiles/.config && eval "$GIT" ;;
-    "bash") cp -r ~/.config/bash ~/Repos/dotfiles/.config && eval "$GIT" ;;
-    "nvim") cp -r ~/.config/nvim ~/Repos/dotfiles/.config && eval "$GIT" ;;
-    "polybar") -r cp ~/.config/polybar ~/Repos/dotfiles/.config && eval "$GIT" ;;
-    "zsh") cp -r ~/.config/zsh ~/Repos/dotfiles/.config && eval "$GIT" ;;
-    "all") cp -r ~/.config ~/Repos/dotfiles/.config && eval "$GIT" ;;
+    "alacritty") cp -r ~/.config/alacritty ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
+    "awesome") cp -r ~/.config/awesome ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
+    "bash") cp -r ~/.config/bash ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
+    "nvim") cp -r ~/.config/nvim ~/Repos/dotfiles/.config/ && rm -rf ~/Repos/dotfiles/.config/nvim/autoload/plugged && eval "$GIT" ;;
+    "polybar") -r cp ~/.config/polybar ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
+    "zsh") cp -r ~/.config/zsh ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
+    "all") cp -r ~/.config ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
     "*") echo "Unknown option" && exit 1 ;;
 esac
 #!/bin/sh
