@@ -1,0 +1,8 @@
+#!/bin/sh
+# A utility script to make git push faster
+# Dependencies:
+# git
+
+git add .
+git commit -m "$1"
+git push
