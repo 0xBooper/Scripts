@@ -1,7 +1,7 @@
 #!/bin/sh
 # A utility script that syncs my configs to the git repo
 
-GIT="cd ~/Repos/dotfiles && git add . && git commit -m 'config update' && git push && cd"
+GIT="cd ~/Repos/dotfiles && git add . && git commit -m 'config update ($USERINPUT1)' && git push && cd"
 CONFIGS="alacritty\nawesome\nbash\nnvim\npolybar\nzsh"
 USERINPUT=$(echo -e "$CONFIGS" | dmenu -p "Which config would you like to sync?")
 
