@@ -5,7 +5,7 @@
 # dmenu
 
 
-CONFIGS="awesome\nbash\nneovim\nalacritty\npolybar"
+CONFIGS="awesome\nbash\nneovim\nkitty\npolybar"
 EDIT=$EDITOR
 
 USERINPUT=$(echo -e $CONFIGS | dmenu -p "Which program would you like to edit the config of?")
@@ -20,8 +20,8 @@ case $USERINPUT in
     "bash")
         $EDIT ~/.config/bash/.bashrc
         ;;
-    "alacritty") 
-        $EDIT ~/.config/alacritty/alacritty.yml
+    "kitty") 
+        $EDIT ~/.config/kitty/kitty.conf
         ;;
     "polybar")
         $EDIT ~/.config/polybar/config.ini

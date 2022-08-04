@@ -1,12 +1,12 @@
 #!/bin/sh
 # A utility script that syncs my configs to the git repo
 
-CONFIGS="alacritty\nawesome\nbash\nnvim\npolybar\nzsh"
+CONFIGS="kitty\nawesome\nbash\nnvim\npolybar\nzsh"
 USERINPUT=$(echo -e "$CONFIGS" | dmenu -p "Which config would you like to sync?")
 GIT="cd ~/Repos/dotfiles && git add . && git commit -m '$USERINPUT: update' && git push && cd"
 
 case $USERINPUT in
-    "alacritty") cp -r ~/.config/alacritty ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
+    "kitty") cp -r ~/.config/kitty ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
     "awesome") cp -r ~/.config/awesome ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
     "bash") cp -r ~/.config/bash ~/Repos/dotfiles/.config/ && eval "$GIT" ;;
     "nvim") cp -r ~/.config/nvim/init.vim ~/Repos/dotfiles/.config/nvim/init.vim && eval "$GIT" ;;
