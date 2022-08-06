@@ -8,7 +8,7 @@
 CONFIGS="awesome|bash|neovim|kitty|polybar"
 EDIT=$EDITOR
 
-USERINPUT=$(echo $CONFIGS | rofi -sep "|" -dmenu -p "Which program would you like to edit the config of?")
+USERINPUT=$(echo $CONFIGS | rofi -sep "|" -dmenu -i -p "Which program would you like to edit the config of?")
 
 case $USERINPUT in
     "awesome")

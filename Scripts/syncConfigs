@@ -2,7 +2,7 @@
 # A utility script that syncs my configs to the git repo
 
 CONFIGS="kitty|awesome|bash|nvim|polybar|zsh"
-USERINPUT=$(echo "$CONFIGS" | rofi -sep "|" -dmenu -p "Which config would you like to sync?")
+USERINPUT=$(echo "$CONFIGS" | rofi -sep "|" -dmenu -i -p "Which config would you like to sync?")
 GIT="cd ~/Repos/dotfiles && git add . && git commit -m '$USERINPUT: update' && git push && cd"
 
 case $USERINPUT in
