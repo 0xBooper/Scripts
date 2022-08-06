@@ -2,13 +2,13 @@
 # A utility script to edit specific configs
 # Rewrite script to fit your configs
 # Dependencies:
-# dmenu
+# rofi
 
 
-CONFIGS="awesome\nbash\nneovim\nkitty\npolybar"
+CONFIGS="awesome|bash|neovim|kitty|polybar"
 EDIT=$EDITOR
 
-USERINPUT=$(echo -e $CONFIGS | dmenu -p "Which program would you like to edit the config of?")
+USERINPUT=$(echo $CONFIGS | rofi -sep "|" -dmenu -p "Which program would you like to edit the config of?")
 
 case $USERINPUT in
     "awesome")

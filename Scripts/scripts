@@ -1,12 +1,12 @@
 #!/bin/sh
 # A utility script to quickly edit other scripts
 # Dependencies:
-# dmenu
+# rofi
 
-SCRIPTS="configs\ngc\nscripts\nmakeScript\nsyncConfigs"
+SCRIPTS="configs|gc|scripts|makeScript|syncConfigs"
 EDIT=$EDITOR
 
-USERINPUT=$(echo -e $SCRIPTS | dmenu -p "Choose a script to edit")
+USERINPUT=$(echo  $SCRIPTS | rofi -sep "|" -dmenu -p "Choose a script to edit")
 
 case $USERINPUT in
     "gc")
