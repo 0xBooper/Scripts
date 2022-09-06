@@ -3,7 +3,7 @@
 # Dependencies:
 # rofi
 
-SCRIPTS="configs|gc|scripts|makeScript|syncConfigs"
+SCRIPTS="configs|gc|scripts|makeScript|syncConfigs|powermenu"
 EDIT=$EDITOR
 
 USERINPUT=$(echo  $SCRIPTS | rofi -sep "|" -dmenu -i -p "Choose a script to edit")

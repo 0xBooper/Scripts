@@ -1,0 +1,8 @@
+#!/bin/sh
+selected=$(echo -e "Shutdown\nRestart\nLogout" | rofi -dmenu -i -p "Power Options")
+
+case $selected in 
+  Shutdown) poweroff;;
+  Restart) reboot;;
+  Logout) kill $(pgrep Xorg);;
+esac
